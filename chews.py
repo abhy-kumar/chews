@@ -1,18 +1,18 @@
+#!/usr/bin/env python
+
+import click
 import feedparser
-import appdirs
-import os
-import sys
-import webbrowser
-import errno
 
-appauthor = "Abhishek Kumar"  # If the data directory doesn't exist, create it
-datadir = appdirs.user_data_dir(appname, appauthor)
-if (not os.path.isdir(datadir)):
-    os.makedirs(datadir)
+@click.command()
+def main():
+    print("Hi. Welcome to Chews. The following feed uses Reuters RSS source\n")
+    print("Here are the top news for today:")
+    d = feedparser.parse("http://feeds.reuters.com/reuters/INtopNews")
+    num = min(20, len(d['entries']))
+    for entry in d['entries'][:num]:
+                title = entry['title']
+                print("* " + title)
+                callback = lambda link=entry['link']: openSite(link)
 
-path = os.path.join(datadir, "sites.txt")
-
-d = feedparser.parse("*link here, tba*")
-for i in range (0:):
-    d.entries[i].title
-
+if __name__ == "__main__":
+    main()
