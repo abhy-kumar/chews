@@ -9,12 +9,6 @@
       python chews.py
 
 ## Modification
-* Change the value of site variable to change the preferred news source.
-```json
-{
-    ...
-    site = "yourpreferred.rss/source/here"
-    ...
-}
-```
+* Change the value of `site` variable in the `main` function to change the preferred news source.
 
+   ```site = "yourpreferred.rss/source/here"```
