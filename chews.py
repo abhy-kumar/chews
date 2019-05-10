@@ -17,7 +17,7 @@ class color:
 
 @click.command()
 def main():
-
+    site = "http://feeds.reuters.com/reuters/INtopNews"
     import datetime
     today = datetime.date.today()
     mylist = []
@@ -27,7 +27,7 @@ def main():
     print("\n")
     print('\033[95m' + '\033[1m'+"Hi. Welcome to Chews. The following feed uses Reuters RSS source\n"+'\033[0m' + '\033[0m')
     print("Here are the top news for today, " + str(mylist[0]) + "\n")
-    d = feedparser.parse("http://feeds.reuters.com/reuters/INtopNews")
+    d = feedparser.parse(site)
     num = min(val, len(d['entries']))
     for entry in d['entries'][:num]:
                 title = entry['title']
