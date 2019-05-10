@@ -1,7 +1,6 @@
 # chews
 **chews** is a simple CLI application for reading news through terminal.
-<p align="center"><img src="https://raw.githubusercontent.com/abhy-kumar/chews/master/Screenshots/app_screenshot.png
-"/></p>
+<p align="center"><img src="https://i.imgur.com/imsDuKk.png"/></p>
 
 ## Usage
 * Go to the directory where you have downloaded **chews** and run the following commands in your terminal:
