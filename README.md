@@ -8,7 +8,7 @@
       source venv/bin/activate.fish (or just 'source /venv/bin/activate' if you are running bash shell)
 
       python chews.py
-*## P.S. : You can check the `/Screenshots/` folder for visual instructions.
+### P.S. : You can check the `/Screenshots/` folder for visual instructions.
 ## Modification
 * Change the value of `site` variable in the `main` function to change the preferred news source.
 
