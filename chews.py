@@ -1,7 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import click
-import feedparser
+from feedparser import parse
 
 class color:
    PURPLE = '\033[95m'
@@ -15,24 +14,19 @@ class color:
    UNDERLINE = '\033[4m'
    END = '\033[0m'
 
-@click.command()
 def main():
     site = "http://feeds.reuters.com/reuters/INtopNews"
-    import datetime
-    today = datetime.date.today()
-    mylist = []
-    mylist.append(today)
+    from datetime import date
 
-    val = 15
-    print("\n")
-    print('\033[95m' + '\033[1m'+"Hi. Welcome to Chews. The following feed uses Reuters RSS source\n"+'\033[0m' + '\033[0m')
-    print("Here are the top news for today, " + str(mylist[0]) + "\n")
-    d = feedparser.parse(site)
-    num = min(val, len(d['entries']))
-    for entry in d['entries'][:num]:
+    top = 15
+    print()
+    print(color.PURPLE + color.BOLD + "Hi. Welcome to Chews. The following feed uses Reuters RSS source" + color.END + color.END, '\n')
+    print("Here are the top news for today,", date.today(), '\n')
+    newsfeed = parse(site)
+    num = min(top, len(newsfeed['entries']))
+    for entry in newsfeed['entries'][:num]:
                 title = entry['title']
-                print("> " + title)
-                callback = lambda link=entry['link']: openSite(link)
-    print("\n")
+                print(">", title)
+    print()
 if __name__ == "__main__":
     main()
