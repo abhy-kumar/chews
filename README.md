@@ -2,7 +2,7 @@
 **chews** is a simple CLI application for reading news through terminal.
 
 ## Usage
-* Run the following commands in your terminal of choice:
+* Go to the directory where you have downloaded **chews** and run the following commands in your terminal:
            
       source venv/bin/activate.fish (or just 'source /venv/bin/activate' if you are running bash shell)
 
